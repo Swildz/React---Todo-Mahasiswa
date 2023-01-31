@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Navbarcomponent from "./navbarComponent";
 import TableMahasiswa from "./TableMahasiswa";
 import Formahasiwa from "./formMahasiswa";
+import Lifecycle from './lifeCycle'
+import DeleteTable from "./deleteTable";
+import Login from "../login/Login";
 export default class index extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +16,7 @@ export default class index extends Component {
       jurusan: "",
       sertifikat: "",
       id: "",
+      delTampilan : false
     };
   }
 
@@ -96,11 +100,14 @@ export default class index extends Component {
   };
 
   render() {
-    console.log(this.state.mahasiswas);
     return (
       <div>
+        <Login />
+        {/* <Lifecycle />
         <Navbarcomponent />
         <div className="container mt-4">
+          {this.state.delTampilan && <DeleteTable hapusData={(id) => this.hapusData(id)}/>}
+          <button onClick={()=> this.setState({delTampilan : !this.state.delTampilan})}>Hapus List</button>
           <TableMahasiswa
             {...this.state}
             editData={this.editData}
@@ -111,7 +118,7 @@ export default class index extends Component {
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
-        </div>
+        </div> */}
       </div>
     );
   }

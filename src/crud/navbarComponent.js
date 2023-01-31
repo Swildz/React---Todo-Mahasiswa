@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavDropdown, Nav, Navbar} from "react-bootstrap";
+import TableMahasiswa from "./TableMahasiswa";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 export default class navbarComponent extends Component {
   render() {
