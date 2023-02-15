@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button, Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addMahasiswa,
@@ -41,24 +42,59 @@ function AddMahasiswa() {
   }, [detailMahasiswa, dispatch]);
   return (
     <div>
-      <h4>Add Mahasiswa</h4>
-      <form onSubmit={(event) => handleSubmit(event)}>
-        <input
-          type="text"
-          name="nama"
-          placeholder="Nama ...."
-          value={nama}
-          onChange={(event) => setNama(event.target.value)}
-        />
-        <input
-          type="text"
-          name="nohp"
-          placeholder="No Hp ...."
-          value={nohp}
-          onChange={(event) => setNohp(event.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <Row>
+        <Col>
+          <h4>{id ? "Edit Data Mahasiswa" : "Insert Data Mahasiswa"}</h4>
+          <hr />
+        </Col>
+      </Row>
+      <Row className="mt-5">
+        <Col>
+          <Form onSubmit={(event) => handleSubmit(event)}>
+            <Form.Group className="mb-3" controlId="nama">
+              <Form.Label>Nama Mahasiswa</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Masukkan Nama Anda"
+                name="nama"
+                onChange={(event) => setNama(event.target.value)}
+                required
+                value={nama}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="nohp">
+              <Form.Label>Nomor HandPhone</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Masukkan Nama Anda"
+                name="nohp"
+                onChange={(event) => setNohp(event.target.value)}
+                required
+                value={nohp}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+            {/* <input
+              type="text"
+              name="nama"
+              placeholder="Nama ...."
+              value={nama}
+              onChange={(event) => setNama(event.target.value)}
+            />
+            <input
+              type="text"
+              name="nohp"
+              placeholder="No Hp ...."
+              value={nohp}
+              onChange={(event) => setNohp(event.target.value)}
+            /> */}
+            {/* <button type="submit">Submit</button> */}
+          </Form>
+        </Col>
+      </Row>
+      {/* <h4>Add Mahasiswa</h4> */}
     </div>
   );
 }

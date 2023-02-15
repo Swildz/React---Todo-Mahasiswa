@@ -1,4 +1,29 @@
 {
+  "mahasiswa": [
+    {
+      "nama": "Siddiq",
+      "nohp": "082285162715",
+      "id": 1
+    },
+    {
+      "nama": "Ahmad Siddiq",
+      "nohp": "082285162715",
+      "id": 2
+    },
+    {
+      "nama": "Ahmad Siddiq",
+      "nohp": "0897777",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "siddiq",
+      "email": "ahmad.siddiq559@gmail.com",
+      "password": "kosong"
+    }
+  ],
   "posts": [
     {
       "id": 1,
